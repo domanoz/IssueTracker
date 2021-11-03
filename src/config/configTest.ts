@@ -1,4 +1,5 @@
 export const Config = {
+    serverPort: 3001,
     type: "postgres",
     host: "db-test",
     port: 5432,
