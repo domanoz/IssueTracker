@@ -1,0 +1,29 @@
+version: "3.8"
+services:
+  app:
+    build: .
+    ports:
+      - 3001:3001
+    depends_on:
+      - db
+      - db-test
+  db:
+    image: postgres:14
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: postgres
+    ports:
+      - 5432:5432
+    volumes:
+      - db-data:/var/lib/postgresql/data
+  db-test:
+    image: postgres:14
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: postgres_test
+    ports:
+      - 5433:5432
+volumes:
+  db-data:
