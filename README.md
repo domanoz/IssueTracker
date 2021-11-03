@@ -40,6 +40,11 @@ It should take you about 6-8 hours.
 - DELETE: <br />
 -- /api/issues/:id --> delete issue <br />
 
+## Issue State
+- OPEN --> 0
+- PENDING --> 1
+- CLOSED --> 2
+
 # Run app
 ```console
 docker-compose up --build -d
